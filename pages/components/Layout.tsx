@@ -55,7 +55,7 @@ export default function Layout({ children }: LayoutProps) {
                 <FaPhoneAlt className="mr-1" /> +91 7008131282
               </span>
               <span className="flex items-center">
-                <FaEnvelope className="mr-1" /> info@odishaparadise.com
+                <FaEnvelope className="mr-1" /> odishaparadise@gmail.com
               </span>
             </div>
             <div className="flex items-center space-x-4">
