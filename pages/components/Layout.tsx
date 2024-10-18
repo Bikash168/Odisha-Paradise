@@ -131,7 +131,7 @@ export default function Layout({ children }: LayoutProps) {
           <nav className="md:hidden bg-white shadow-lg">
             <ul className="flex flex-col items-center space-y-4 py-4">
               <li>
-                <Link href="/about-us" className="hover:text-blue-600" onClick={toggleMenu}>
+                <Link href="/about" className="hover:text-blue-600" onClick={toggleMenu}>
                   About Us
                 </Link>
               </li>
