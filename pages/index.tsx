@@ -1,115 +1,195 @@
-import Image from "next/image";
-import localFont from "next/font/local";
+import Head from 'next/head';
+import Layout from '../pages/components/Layout';
+import Link from 'next/link';
+import { useEffect } from 'react';
+import { Carousel } from 'react-responsive-carousel'; // Install this package if you haven't already
+import { motion } from 'framer-motion'; // Import Framer Motion
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // Import carousel styles
 
-export default function Home() {
+const Home = () => {
+  useEffect(() => {
+    // Any animations or libraries can be initialized here
+  }, []);
+
   return (
-    <div
-      className={`${geistSans.variable} ${geistMono.variable} grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]`}
-    >
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              pages/index.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <Layout>
+      <Head>
+        <title>Odisha Paradise Tours and Travels</title>
+        <meta name="description" content="Explore the beauty of Odisha with our tours and travel services." />
+      </Head>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Hero Section */}
+      <section className="relative w-full h-[400px]">
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('../images/hero-image.jpg')" }}>
+          <div className="flex items-center justify-center w-full h-full bg-black bg-opacity-50">
+            <h1 className="text-white text-4xl font-bold animate-bounce">Welcome to Odisha Paradise!</h1>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+      </section>
+
+      {/* Featured Tours Section */}
+      <section className="py-10 bg-gray-100">
+        <div className="container mx-auto text-center">
+          <motion.h2 
+            className="text-4xl font-semibold mb-6 text-[#316b9e]"
+            initial={{ opacity: 0, y: -20 }} 
+            animate={{ opacity: 1, y: 0 }} 
+            transition={{ duration: 0.5 }}
+          >
+            Featured Tours
+          </motion.h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Tour Card Example */}
+            <TourCard 
+              imageSrc="../images/tour1.jpg"
+              title="Tour to Konark"
+              description="Explore the beautiful Sun Temple of Konark."
+              link="/tours1/konark"
+            />
+            <TourCard 
+              imageSrc="../images/tour2.jpg"
+              title="Puri Beach Tour"
+              description="Enjoy the sandy beaches of Puri."
+              link="/tours/puri"
+            />
+            <TourCard 
+              imageSrc="../images/tour3.jpg"
+              title="Chilika Lake Tour"
+              description="Experience the beauty of Asia's largest coastal lagoon."
+              link="/tours/chilika"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Image Carousel Section */}
+      <section className="py-10">
+        <div className="container mx-auto">
+          <motion.h2 
+            className="text-4xl font-semibold text-center mb-6 text-[#316b9e]"
+            initial={{ opacity: 0, y: -20 }} 
+            animate={{ opacity: 1, y: 0 }} 
+            transition={{ duration: 0.5 }}
+          >
+            Explore Odisha
+          </motion.h2>
+          <Carousel showArrows={true} infiniteLoop={true} autoPlay={true} interval={3000}>
+            <div>
+              <img src="../images/image1.jpg" alt="Image 1" />
+            </div>
+            <div>
+              <img src="../images/image2.jpg" alt="Image 2" />
+            </div>
+            <div>
+              <img src="../images/image3.jpg" alt="Image 3" />
+            </div>
+          </Carousel>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-10 bg-gray-100">
+        <div className="container mx-auto text-center">
+          <motion.h2 
+            className="text-4xl font-semibold mb-6 text-[#316b9e]"
+            initial={{ opacity: 0, y: -20 }} 
+            animate={{ opacity: 1, y: 0 }} 
+            transition={{ duration: 0.5 }}
+          >
+            What Our Customers Say
+          </motion.h2>
+          <div className="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-6">
+            <Testimonial 
+              text="An unforgettable experience! Highly recommended."
+              author="- Customer Name"
+            />
+            <Testimonial 
+              text="The best tours in Odisha! Everything was well organized."
+              author="- Customer Name"
+            />
+            <Testimonial 
+              text="Amazing sights and wonderful guides. Will book again!"
+              author="- Customer Name"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Additional Information Section */}
+      <section className="py-10 text-center bg-white">
+        <div className="container mx-auto">
+          <motion.h2 
+            className="text-4xl font-semibold mb-4 text-[#316b9e]"
+            initial={{ opacity: 0, y: -20 }} 
+            animate={{ opacity: 1, y: 0 }} 
+            transition={{ duration: 0.5 }}
+          >
+            Discover Odisha's Unique Culture
+          </motion.h2>
+          <p className="text-lg text-gray-700 mb-4">
+            Odisha is home to some of the most breathtaking landscapes, diverse cultures, and rich traditions in India. From its pristine beaches to ancient temples, every corner of Odisha has a story to tell.
+          </p>
+          <Link href="/about">
+            <button className="mt-4 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition duration-300">Learn More About Us</button>
+          </Link>
+        </div>
+      </section>
+
+      {/* Call to Action Section */}
+      <section className="py-10 text-center bg-orange-400 text-white">
+        <motion.h2 
+          className="text-4xl font-semibold mb-4"
+          initial={{ opacity: 0, y: -20 }} 
+          animate={{ opacity: 1, y: 0 }} 
+          transition={{ duration: 0.5 }}
         >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+          Ready to Explore?
+        </motion.h2>
+        <Link href="/tours">
+          <button className="mt-4 bg-white text-blue-600 py-2 px-4 rounded hover:bg-gray-200 transition duration-300">Explore Tours</button>
+        </Link>
+      </section>
+    </Layout>
+  );
+};
+
+// Define prop types for TourCard component
+interface TourCardProps {
+  imageSrc: string;
+  title: string;
+  description: string;
+  link: string;
+}
+
+// TourCard Component
+const TourCard: React.FC<TourCardProps> = ({ imageSrc, title, description, link }) => {
+  return (
+    <div className="bg-white p-4 rounded shadow hover:shadow-lg transition-shadow duration-300">
+      <img src={imageSrc} alt={title} className="w-full h-48 object-cover rounded" />
+      <h3 className="text-xl font-semibold mt-2">{title}</h3>
+      <p>{description}</p>
+      <Link href={link}>
+        <button className="mt-4 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition duration-300">Learn More</button>
+      </Link>
     </div>
   );
+};
+
+// Define prop types for Testimonial component
+interface TestimonialProps {
+  text: string;
+  author: string;
 }
+
+// Testimonial Component
+const Testimonial: React.FC<TestimonialProps> = ({ text, author }) => {
+  return (
+    <div className="bg-white p-4 rounded shadow transition-shadow duration-300 hover:shadow-lg">
+      <p>{text}</p>
+      <h4 className="font-semibold mt-2">{author}</h4>
+    </div>
+  );
+};
+
+export default Home;

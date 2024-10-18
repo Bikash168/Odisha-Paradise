@@ -3,25 +3,99 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #ffffff;
+    --foreground: #171717;
   }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background: #0a0a0a;
+      --foreground: #ededed;
+    }
   }
-}
+  
+  body {
+    color: var(--foreground);
+    background: var(--background);
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  @layer utilities {
+    .text-balance {
+      text-wrap: balance;
+    }
+  }
+  
+  /* Add this CSS to your global stylesheet or custom CSS */
+  .swiper-pagination-bullet {
+    background: #f9a825; /* Yellow color for the pagination bullets */
+  }
+  
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: #fff; /* White color for navigation arrows */
+  }
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @keyframes slideUp {
+    0% { transform: translateY(20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+  
+  .animate-fadeIn {
+    animation: fadeIn 0.5s ease-in-out forwards;
+  }
+  
+  .animate-slideUp {
+    animation: slideUp 0.6s ease-in-out forwards;
+  }
+  .padbou{padding-bottom: 25px;}
+  .rowclimn{flex-direction:column;}
+  .rowclimn.top-full{top:20px;}
+  .topmar{top:168px;}
+  .nopad{padding-bottom: 0;}
+  .textalin{text-align: justify;}
+  .padleft{padding-left: 90px;}
+  .logosi{height:5.5rem;}
+  .padtop{padding-top: 80px;}
+  .menuborder{border: 1px solid #ccc;padding: 5px 15px;border-radius: 5px;margin-left: 5px !important;}
+  .swiperpad{padding-bottom: 100px;}
+  .borderline{border-bottom: 1px solid #ccc;}
+  .paboth{padding-top: 10px;padding-bottom: 10px;}
+  .mart{margin-left: 5px;margin-top: 3px;}
+  .rela{position: relative;z-index: -2;}
+  .popmenu{left: 7px}
+  .leftmarcon{border: 1px solid #ccc;padding: 5px 15px;border-radius: 5px;margin-left: 7px !important;}
+  .padl{padding-left: 30px;padding-right: 30px;}
+  .borderl{border: 1px solid #ccc;
+    padding: 20px;
+    margin-right: 25px;
+    margin-bottom: 3px;text-align: center;}
+    .hojver {
+      --tw-text-opacity: 1;
+      color: rgb(255 255 255);
+      background: green;
+      display: block;
+      width: 100%;
+      padding: 20px;
+  
+    }
+  @media (min-width:992px) and (max-width:1199px){
+    .padleft{padding-left: 40px;}
+    }
+        @media (min-width:768px) and (max-width:991px){
+          .padleft{padding-left: 45px;}
+          }
+            @media (min-width:601px) and (max-width:767px){
+              .padleft{padding-left:0;}
+              }
+              @media (min-width:481px) and (max-width:600px){
+                .padleft{padding-left:0;}
+                }
+                @media (min-width:300px) and (max-width:480px){
+                  .padleft{padding-left:0;}
+                  }
+  
