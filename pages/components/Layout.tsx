@@ -154,9 +154,7 @@ export default function Layout({ children }: LayoutProps) {
           <div>
             <h3 className="text-lg font-bold mb-4">About Us</h3>
             <p>
-              At Odisha Paradise, we believe in crafting unforgettable experiences that showcase the rich culture,
-              heritage, and natural beauty of Odisha. Our journey began with a vision to promote tourism in this enchanting
-              state, offering a gateway to explore its breathtaking landscapes, historic sites, and vibrant traditions.
+              When you are planning your vacation in odisha let us assit you with your holiday.We offer an online personalized itinerary planning & reservation service,where you receive a totally easy,simple & customized itinerary that meet your specific requirements.
             </p>
           </div>
 
@@ -196,13 +194,15 @@ export default function Layout({ children }: LayoutProps) {
           <div>
             <h3 className="text-lg font-bold mb-4">Contact Us</h3>
             <p>
-              Trident Group of Institutions,<br />
-              F2, Chandaka Industrial Estate,<br />
-              Technology Corridor, Infocity Area,<br />
-              Chandrasekharpur, Bhubaneswar, Odisha. 751024
+              Odisha paradise Tours & travels
+
+              <br />
+              Plot-1218,LIG K-4,Khandagiri,<br />
+              Bhubaneswar,odisha<br />
+
             </p>
             <br />
-            <p>Email: info@odishaparadise.com</p>
+            <p>Email: odishaparadise@gmail.com</p>
             <p>Phone: +91 7008131282</p>
           </div>
 
