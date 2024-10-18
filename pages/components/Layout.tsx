@@ -136,12 +136,12 @@ export default function Layout({ children }: LayoutProps) {
                 </Link>
               </li>
               <li>
-                <Link href="/travels" className="hover:text-blue-600" onClick={toggleMenu}>
+                <Link href="/tours" className="hover:text-blue-600" onClick={toggleMenu}>
                 Tours
                 </Link>
               </li>
               <li>
-                <Link href="/news-and-events" className="hover:text-blue-600" onClick={toggleMenu}>
+                <Link href="/travels" className="hover:text-blue-600" onClick={toggleMenu}>
                 Travels
                 </Link>
               </li>
