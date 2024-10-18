@@ -52,7 +52,7 @@ export default function Layout({ children }: LayoutProps) {
                 <FaMapMarkerAlt className="mr-1" /> Bhubaneswar, India
               </span>
               <span className="flex items-center">
-                <FaPhoneAlt className="mr-1" /> +91 9439173220
+                <FaPhoneAlt className="mr-1" /> +91 7008131282
               </span>
               <span className="flex items-center">
                 <FaEnvelope className="mr-1" /> info@odishaparadise.com
@@ -203,7 +203,7 @@ export default function Layout({ children }: LayoutProps) {
             </p>
             <br />
             <p>Email: info@odishaparadise.com</p>
-            <p>Phone: +91 9439173220</p>
+            <p>Phone: +91 7008131282</p>
           </div>
 
           {/* Social Media Links */}
