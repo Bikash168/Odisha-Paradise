@@ -25,9 +25,11 @@ const About = () => {
           animate={{ opacity: 1, y: 0 }} 
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          Odisha Paradise Tours and Travels is a premier travel agency dedicated to showcasing the beauty and cultural heritage of Odisha. 
-          With a passion for travel and a commitment to customer satisfaction, we offer tailor-made tours designed to meet the unique needs 
-          of our clients.
+        When you are planning your vacation in odisha let us assit you with your holiday.We offer an online personalized itinerary planning & reservation service,where you receive a totally easy,simple & customized itinerary that meet your specific requirements.
+Odisha paradise Tours & travels is one of the leading travel aggregator in odisha.Our core value differentiator is delivery of fastest & trusted user experience.We provide best services in the region and are one of the fast growing tour operator in the region.With our dedicated staff that works 24/7  around the clock to make your holiday experience, one of the lasting memories for ever.
+Go ahead & explore the destination with the one of the best travel company in Odisha.
+                  “Let’s start planning your vacation & make it truly memorable”
+
         </motion.p>
 
         <motion.h3 
@@ -72,20 +74,22 @@ const About = () => {
           className="text-3xl font-semibold mb-2"
           initial={{ opacity: 0, y: -20 }} 
           animate={{ opacity: 1, y: 0 }} 
-          transition={{ duration: 0.5, delay: 0.6 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
         >
-          Why Choose Us?
+          Why Us?
         </motion.h3>
-        <motion.p 
-          className="text-lg text-gray-700 mb-4"
+        <motion.ul 
+          className="list-disc list-inside text-lg text-gray-700 mb-4"
           initial={{ opacity: 0, y: -20 }} 
           animate={{ opacity: 1, y: 0 }} 
-          transition={{ duration: 0.5, delay: 0.7 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
         >
-          At Odisha Paradise Tours and Travels, we pride ourselves on our local expertise, personalized service, and commitment to quality. 
-          Our team of experienced travel professionals is dedicated to crafting unique itineraries that cater to your interests and budget. 
-          Whether you're looking for adventure, relaxation, or cultural immersion, we have the perfect tour for you!
-        </motion.p>
+          <li>Customised stay options tailor made to suit your needs.</li>
+          <li>A personal agent for round the clock assistance.</li>
+          <li>Affordable prices that don’tstrain your pocket.</li>
+          <li>Believes in providing safe & comfortable services to the guests.</li>
+          <li>Free custom planning for trip to odisha.</li>
+        </motion.ul>
 
         <motion.h3 
           className="text-3xl font-semibold mb-2"
