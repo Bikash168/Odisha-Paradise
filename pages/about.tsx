@@ -28,7 +28,7 @@ const About = () => {
         >
           When you are planning your vacation in Odisha, let us assist you with your holiday. We offer an online personalized itinerary planning & reservation service, where you receive a totally easy, simple & customized itinerary that meets your specific requirements. Odisha Paradise Tours & Travels is one of the leading travel aggregators in Odisha. Our core value differentiator is the delivery of the fastest & most trusted user experience. We provide the best services in the region and are one of the fastest-growing tour operators in the area. With our dedicated staff that works 24/7 around the clock, we make your holiday experience one of the lasting memories forever. 
           Go ahead & explore the destination with one of the best travel companies in Odisha. 
-          “Let&apos;s start planning your vacation & make it truly memorable.”
+          “Let&apos;s start planning your vacation &amp; make it truly memorable.”
         </motion.p>
 
         <motion.h3 
@@ -45,7 +45,7 @@ const About = () => {
           animate={{ opacity: 1, y: 0 }} 
           transition={{ duration: 0.5, delay: 0.3 }}
         >
-          Our mission is to provide memorable travel experiences that enrich our clients' understanding of Odisha&apos;s rich culture, history, and natural beauty. We strive to create lasting connections between our guests and the destinations they visit.
+          Our mission is to provide memorable travel experiences that enrich our clients&apos; understanding of Odisha&apos;s rich culture, history, and natural beauty. We strive to create lasting connections between our guests and the destinations they visit.
         </motion.p>
 
         <motion.h3 
@@ -85,7 +85,7 @@ const About = () => {
           <li>Customised stay options tailor-made to suit your needs.</li>
           <li>A personal agent for round-the-clock assistance.</li>
           <li>Affordable prices that don&apos;t strain your pocket.</li>
-          <li>We believe in providing safe & comfortable services to the guests.</li>
+          <li>We believe in providing safe &amp; comfortable services to the guests.</li>
           <li>Free custom planning for trips to Odisha.</li>
         </motion.ul>
 

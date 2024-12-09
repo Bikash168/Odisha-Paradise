@@ -37,7 +37,7 @@ interface TestimonialProps {
 const Testimonial: React.FC<TestimonialProps> = ({ text, author }) => (
   <div className="bg-white p-4 rounded shadow transition-shadow duration-300 hover:shadow-lg">
     <p className="italic">&quot;{text}&quot;</p>
-    <h4 className="font-semibold mt-2">&rsquo;{author}&rsquo;</h4>
+    <h4 className="font-semibold mt-2">&rsquo;{author}&rsquo;</h4> {/* Escaped single quotes */}
   </div>
 );
 
@@ -60,7 +60,9 @@ const Home = () => {
           style={{ backgroundImage: "url('/images/hero-image.jpg')" }} // Ensure path is correct
         >
           <div className="flex items-center justify-center w-full h-full bg-black bg-opacity-50">
-            <h1 className="text-white text-4xl md:text-6xl font-bold animate-bounce text-center">Welcome to Odisha Paradise!<br />Your Gateway to Global Destinations</h1>
+            <h1 className="text-white text-4xl md:text-6xl font-bold animate-bounce text-center">
+              Welcome to Odisha Paradise!<br />Your Gateway to Global Destinations
+            </h1>
           </div>
         </div>
       </section>
@@ -149,7 +151,7 @@ const Home = () => {
         <div className="container mx-auto">
           <h2 className="text-3xl font-semibold mb-4">Ready to Explore the World?</h2>
           <p className="mb-6">
-            Whether you're seeking adventure, culture, or relaxation, we have something for everyone. Book your tour today and embark on a journey of discovery!
+            Whether you are seeking adventure, culture, or relaxation, we have something for everyone. Book your tour today and embark on a journey of discovery!
           </p>
           <Link href="/contact">
             <button className="bg-white text-blue-600 py-2 px-4 rounded hover:bg-gray-200 transition duration-300">
