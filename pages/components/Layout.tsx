@@ -1,6 +1,7 @@
 import { useEffect, useState, ReactNode } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import Image from 'next/image'; // Import Image component from Next.js
 import {
   FaFacebook,
   FaTwitter,
@@ -84,10 +85,10 @@ export default function Layout({ children }: LayoutProps) {
         {/* Main Navigation */}
         <div className="container mx-auto p-4 flex justify-between items-center">
           <Link href="/" className="flex items-center">
-            <img src="/logo.webp" alt="Odisha Paradise Tours Logo" className="h-12 w-12 object-cover" />
+            <Image src="/logo.webp" alt="Odisha Paradise Tours Logo" width={48} height={48} className="object-cover" />
             <div className="ml-3 text-[#316b9e]">
               <h1 className="text-xl font-bold">Odisha Paradise Tours & Travels</h1>
-              <p className="text-sm italic">"Explore the Beauty of Odisha"</p>
+              <p className="text-sm italic">{"\"Explore the Beauty of Odisha\""}</p>
             </div>
           </Link>
 
@@ -98,7 +99,6 @@ export default function Layout({ children }: LayoutProps) {
             </button>
           </div>
 
-          {/* Desktop Menu */}
           {/* Desktop Menu */}
           <nav className="hidden md:flex space-x-6 relative">
             <Link href="/about" className="hover:text-blue-600">
@@ -198,34 +198,6 @@ export default function Layout({ children }: LayoutProps) {
           )}
 
         </div>
-
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <nav className="md:hidden bg-white shadow-lg">
-            <ul className="flex flex-col items-center space-y-4 py-4">
-              <li>
-                <Link href="/about" className="hover:text-blue-600" onClick={toggleMenu}>
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link href="/tours" className="hover:text-blue-600" onClick={toggleMenu}>
-                  Tours
-                </Link>
-              </li>
-              <li>
-                <Link href="/reviews" className="hover:text-blue-600" onClick={toggleMenu}>
-                  Reviews
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="hover:text-blue-600" onClick={toggleMenu}>
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </nav>
-        )}
       </header>
 
       {/* Main Content */}
@@ -238,7 +210,7 @@ export default function Layout({ children }: LayoutProps) {
           <div>
             <h3 className="text-lg font-bold mb-4">About Us</h3>
             <p>
-              When you are planning your vacation in odisha let us assit you with your holiday.We offer an online personalized itinerary planning & reservation service,where you receive a totally easy,simple & customized itinerary that meet your specific requirements.
+              When you are planning your vacation in Odisha let us assist you with your holiday. We offer an online personalized itinerary planning & reservation service, where you receive a totally easy, simple & customized itinerary that meets your specific requirements.
             </p>
           </div>
 
@@ -278,46 +250,34 @@ export default function Layout({ children }: LayoutProps) {
           <div>
             <h3 className="text-lg font-bold mb-4">Contact Us</h3>
             <p>
-              Odisha paradise Tours & travels
-
+              Odisha Paradise Tours & Travels
               <br />
-              Plot-1218,LIG K-4,Khandagiri,<br />
-              Bhubaneswar,odisha<br />
-
+              Plot-1218, LIG K-4, Khandagiri, Bhubaneswar, Odisha
+              <br />
             </p>
             <br />
             <p>Email: odishaparadise@gmail.com</p>
             <p>Phone: +91 7008131282</p>
           </div>
 
-          {/* Social Media Links */}
-          <div className="flex flex-col items-center">
+          {/* Social Media */}
+          <div>
             <h3 className="text-lg font-bold mb-4">Follow Us</h3>
             <div className="flex space-x-4">
-              <a href="https://www.facebook.com" className="hover:text-blue-400">
-                <FaFacebook size={24} />
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                <FaFacebook className="text-white text-2xl" />
               </a>
-              <a href="https://x.com" className="hover:text-blue-400">
-                <FaXTwitter size={24} />
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                <FaTwitter className="text-white text-2xl" />
               </a>
-              <a href="https://www.instagram.com" className="hover:text-blue-400">
-                <FaInstagram size={24} />
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                <FaInstagram className="text-white text-2xl" />
               </a>
-              <a href="https://www.linkedin.com" className="hover:text-blue-400">
-                <FaLinkedin size={24} />
-              </a>
-              <a href="https://www.youtube.com" className="hover:text-blue-400">
-                <FaYoutube size={24} />
-              </a>
-              <a href="https://www.whatsapp.com" className="hover:text-blue-400">
-                <FaWhatsapp size={24} />
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                <FaLinkedin className="text-white text-2xl" />
               </a>
             </div>
           </div>
-        </div>
-
-        <div className="text-center mt-8">
-          &copy; {new Date().getFullYear()} Odisha Paradise Tours & Travels. All rights reserved.
         </div>
       </footer>
     </div>

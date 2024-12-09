@@ -2,9 +2,8 @@ import Head from 'next/head';
 import Layout from '../pages/components/Layout';
 import Link from 'next/link';
 import { useEffect } from 'react';
-import { Carousel } from 'react-responsive-carousel';
 import { motion } from 'framer-motion';
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+import Image from 'next/image'; // Import Image from next/image for optimized images
 
 interface TourCardProps {
   imageSrc: string;
@@ -15,7 +14,13 @@ interface TourCardProps {
 
 const TourCard: React.FC<TourCardProps> = ({ imageSrc, title, description, link }) => (
   <div className="bg-white p-4 rounded shadow hover:shadow-lg transition-shadow duration-300">
-    <img src={imageSrc} alt={title} className="w-full h-48 object-cover rounded" />
+    <Image
+      src={imageSrc}
+      alt={title}
+      width={400}  // Adjust width as needed
+      height={300} // Adjust height as needed
+      className="w-full h-48 object-cover rounded"
+    />
     <h3 className="text-xl font-semibold mt-2">{title}</h3>
     <p>{description}</p>
     <Link href={link}>
@@ -31,8 +36,8 @@ interface TestimonialProps {
 
 const Testimonial: React.FC<TestimonialProps> = ({ text, author }) => (
   <div className="bg-white p-4 rounded shadow transition-shadow duration-300 hover:shadow-lg">
-    <p className="italic">"{text}"</p>
-    <h4 className="font-semibold mt-2">- {author}</h4>
+    <p className="italic">&quot;{text}&quot;</p>
+    <h4 className="font-semibold mt-2">&rsquo;{author}&rsquo;</h4>
   </div>
 );
 
@@ -52,7 +57,7 @@ const Home = () => {
       <section className="relative w-full h-[800px]">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('../images/hero-image.jpg')" }}
+          style={{ backgroundImage: "url('/images/hero-image.jpg')" }} // Ensure path is correct
         >
           <div className="flex items-center justify-center w-full h-full bg-black bg-opacity-50">
             <h1 className="text-white text-4xl md:text-6xl font-bold animate-bounce text-center">Welcome to Odisha Paradise!<br />Your Gateway to Global Destinations</h1>
@@ -73,19 +78,19 @@ const Home = () => {
           </motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <TourCard
-              imageSrc="../images/tour1.jpg"
+              imageSrc="/images/tour1.jpg"  // Corrected path to images
               title="Odisha Wonders"
               description="Explore the heritage, beaches, and culture of Odisha."
               link="/tours/odisha"
             />
             <TourCard
-              imageSrc="../images/tour2.jpg"
+              imageSrc="/images/tour2.jpg"  // Corrected path to images
               title="National Highlights"
               description="Discover India's diverse landscapes and iconic destinations."
               link="/tours/india"
             />
             <TourCard
-              imageSrc="../images/tour3.jpg"
+              imageSrc="/images/tour3.jpg"  // Corrected path to images
               title="International Adventures"
               description="Experience the best of global travel with our curated packages."
               link="/tours/international"
@@ -103,17 +108,18 @@ const Home = () => {
               <p className="mb-4">
                 At Odisha Paradise Tours and Travels, we specialize in offering bespoke travel experiences. From the ancient temples of Odisha to exotic international destinations, we are your trusted partner in creating unforgettable journeys.
               </p>
-              <p className="mb-4">
-              <p className="mb-4">
-                At Odisha Paradise Tours and Travels, we specialize in offering bespoke travel experiences. From the ancient temples of Odisha to exotic international destinations, we are your trusted partner in creating unforgettable journeys.
-              </p>
-              </p>
               <Link href="/about">
                 <button className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition duration-300">Learn More</button>
               </Link>
             </div>
             <div className="md:w-1/2">
-              <img src="../images/about-us.jpg" alt="About Us" className="rounded shadow-lg" />
+              <Image
+                src="/images/about-us.jpg"  // Corrected path to images
+                alt="About Us"
+                width={600}  // Adjust width as needed
+                height={400} // Adjust height as needed
+                className="rounded shadow-lg"
+              />
             </div>
           </div>
         </div>
