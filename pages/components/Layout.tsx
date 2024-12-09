@@ -99,20 +99,104 @@ export default function Layout({ children }: LayoutProps) {
           </div>
 
           {/* Desktop Menu */}
-          <nav className="hidden md:flex space-x-6">
+          {/* Desktop Menu */}
+          <nav className="hidden md:flex space-x-6 relative">
             <Link href="/about" className="hover:text-blue-600">
               About Us
             </Link>
             <Link href="/tours" className="hover:text-blue-600">
               Tours
             </Link>
-            <Link href="/travels" className="hover:text-blue-600">
-              Travels
-            </Link>
+            {/* Travel Menu with Submenu */}
+            <div className="relative group">
+              <button className="hover:text-blue-600 flex items-center">
+                Travels
+              </button>
+              {/* Submenu */}
+              <div className="absolute hidden group-hover:block bg-white shadow-lg rounded-md py-2 top-full left-0">
+                <Link
+                  href="/travels/odisha"
+                  className="block px-4 py-2 hover:bg-gray-100 hover:text-blue-600"
+                >
+                  Odisha
+                </Link>
+                <Link
+                  href="/travels/national"
+                  className="block px-4 py-2 hover:bg-gray-100 hover:text-blue-600"
+                >
+                  National
+                </Link>
+                <Link
+                  href="/travels/international"
+                  className="block px-4 py-2 hover:bg-gray-100 hover:text-blue-600"
+                >
+                  International
+                </Link>
+              </div>
+            </div>
             <Link href="/contact" className="hover:text-blue-600">
               Contact
             </Link>
           </nav>
+
+          {/* Mobile Menu */}
+          {isMenuOpen && (
+            <nav className="md:hidden bg-white shadow-lg">
+              <ul className="flex flex-col items-center space-y-4 py-4">
+                <li>
+                  <Link href="/about" className="hover:text-blue-600" onClick={toggleMenu}>
+                    About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/tours" className="hover:text-blue-600" onClick={toggleMenu}>
+                    Tours
+                  </Link>
+                </li>
+                {/* Travel Menu with Submenu */}
+                <li>
+                  <details>
+                    <summary className="hover:text-blue-600 cursor-pointer">Travels</summary>
+                    <ul className="space-y-2 ml-4">
+                      <li>
+                        <Link
+                          href="/travels/odisha"
+                          className="hover:text-blue-600"
+                          onClick={toggleMenu}
+                        >
+                          Odisha
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/travels/national"
+                          className="hover:text-blue-600"
+                          onClick={toggleMenu}
+                        >
+                          National
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/travels/international"
+                          className="hover:text-blue-600"
+                          onClick={toggleMenu}
+                        >
+                          International
+                        </Link>
+                      </li>
+                    </ul>
+                  </details>
+                </li>
+                <li>
+                  <Link href="/contact" className="hover:text-blue-600" onClick={toggleMenu}>
+                    Contact
+                  </Link>
+                </li>
+              </ul>
+            </nav>
+          )}
+
         </div>
 
         {/* Mobile Menu */}
@@ -130,8 +214,8 @@ export default function Layout({ children }: LayoutProps) {
                 </Link>
               </li>
               <li>
-                <Link href="/travels" className="hover:text-blue-600" onClick={toggleMenu}>
-                  Travels
+                <Link href="/reviews" className="hover:text-blue-600" onClick={toggleMenu}>
+                  Reviews
                 </Link>
               </li>
               <li>

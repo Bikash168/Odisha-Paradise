@@ -2,159 +2,10 @@ import Head from 'next/head';
 import Layout from '../pages/components/Layout';
 import Link from 'next/link';
 import { useEffect } from 'react';
-import { Carousel } from 'react-responsive-carousel'; // Install this package if you haven't already
-import { motion } from 'framer-motion'; // Import Framer Motion
+import { Carousel } from 'react-responsive-carousel';
+import { motion } from 'framer-motion';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // Import carousel styles
-
-const Home = () => {
-  useEffect(() => {
-    // Any animations or libraries can be initialized here
-  }, []);
-
-  return (
-    <Layout>
-      <Head>
-        <title>Odisha Paradise Tours and Travels</title>
-        <meta name="description" content="Explore the beauty of Odisha with our tours and travel services." />
-      </Head>
-
-      {/* Hero Section */}
-      <section className="relative w-full h-[400px]">
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('../images/hero-image.jpg')" }}>
-          <div className="flex items-center justify-center w-full h-full bg-black bg-opacity-50">
-            <h1 className="text-white text-4xl font-bold animate-bounce">Welcome to Odisha Paradise!</h1>
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Tours Section */}
-      <section className="py-10 bg-gray-100">
-        <div className="container mx-auto text-center">
-          <motion.h2 
-            className="text-4xl font-semibold mb-6 text-[#316b9e]"
-            initial={{ opacity: 0, y: -20 }} 
-            animate={{ opacity: 1, y: 0 }} 
-            transition={{ duration: 0.5 }}
-          >
-            Featured Tours
-          </motion.h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Tour Card Example */}
-            <TourCard 
-              imageSrc="../images/tour1.jpg"
-              title="Tour to Konark"
-              description="Explore the beautiful Sun Temple of Konark."
-              link="/tours1/konark"
-            />
-            <TourCard 
-              imageSrc="../images/tour2.jpg"
-              title="Puri Beach Tour"
-              description="Enjoy the sandy beaches of Puri."
-              link="/tours/puri"
-            />
-            <TourCard 
-              imageSrc="../images/tour3.jpg"
-              title="Chilika Lake Tour"
-              description="Experience the beauty of Asia's largest coastal lagoon."
-              link="/tours/chilika"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Image Carousel Section */}
-      <section className="py-10">
-        <div className="container mx-auto">
-          <motion.h2 
-            className="text-4xl font-semibold text-center mb-6 text-[#316b9e]"
-            initial={{ opacity: 0, y: -20 }} 
-            animate={{ opacity: 1, y: 0 }} 
-            transition={{ duration: 0.5 }}
-          >
-            Explore Odisha
-          </motion.h2>
-          <Carousel showArrows={true} infiniteLoop={true} autoPlay={true} interval={3000}>
-            <div>
-              <img src="../images/image1.jpg" alt="Image 1" />
-            </div>
-            <div>
-              <img src="../images/image2.jpg" alt="Image 2" />
-            </div>
-            <div>
-              <img src="../images/image3.jpg" alt="Image 3" />
-            </div>
-          </Carousel>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="py-10 bg-gray-100">
-        <div className="container mx-auto text-center">
-          <motion.h2 
-            className="text-4xl font-semibold mb-6 text-[#316b9e]"
-            initial={{ opacity: 0, y: -20 }} 
-            animate={{ opacity: 1, y: 0 }} 
-            transition={{ duration: 0.5 }}
-          >
-            What Our Customers Say
-          </motion.h2>
-          <div className="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-6">
-            <Testimonial 
-              text="An unforgettable experience! Highly recommended."
-              author="- Customer Name"
-            />
-            <Testimonial 
-              text="The best tours in Odisha! Everything was well organized."
-              author="- Customer Name"
-            />
-            <Testimonial 
-              text="Amazing sights and wonderful guides. Will book again!"
-              author="- Customer Name"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Additional Information Section */}
-      <section className="py-10 text-center bg-white">
-        <div className="container mx-auto">
-          <motion.h2 
-            className="text-4xl font-semibold mb-4 text-[#316b9e]"
-            initial={{ opacity: 0, y: -20 }} 
-            animate={{ opacity: 1, y: 0 }} 
-            transition={{ duration: 0.5 }}
-          >
-            Discover Odisha's Unique Culture
-          </motion.h2>
-          <p className="text-lg text-gray-700 mb-4">
-            Odisha is home to some of the most breathtaking landscapes, diverse cultures, and rich traditions in India. From its pristine beaches to ancient temples, every corner of Odisha has a story to tell.
-          </p>
-          <Link href="/about">
-            <button className="mt-4 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition duration-300">Learn More About Us</button>
-          </Link>
-        </div>
-      </section>
-
-      {/* Call to Action Section */}
-      <section className="py-10 text-center bg-orange-400 text-white">
-        <motion.h2 
-          className="text-4xl font-semibold mb-4"
-          initial={{ opacity: 0, y: -20 }} 
-          animate={{ opacity: 1, y: 0 }} 
-          transition={{ duration: 0.5 }}
-        >
-          Ready to Explore?
-        </motion.h2>
-        <Link href="/tours">
-          <button className="mt-4 bg-white text-blue-600 py-2 px-4 rounded hover:bg-gray-200 transition duration-300">Explore Tours</button>
-        </Link>
-      </section>
-    </Layout>
-  );
-};
-
-// Define prop types for TourCard component
 interface TourCardProps {
   imageSrc: string;
   title: string;
@@ -162,33 +13,146 @@ interface TourCardProps {
   link: string;
 }
 
-// TourCard Component
-const TourCard: React.FC<TourCardProps> = ({ imageSrc, title, description, link }) => {
-  return (
-    <div className="bg-white p-4 rounded shadow hover:shadow-lg transition-shadow duration-300">
-      <img src={imageSrc} alt={title} className="w-full h-48 object-cover rounded" />
-      <h3 className="text-xl font-semibold mt-2">{title}</h3>
-      <p>{description}</p>
-      <Link href={link}>
-        <button className="mt-4 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition duration-300">Learn More</button>
-      </Link>
-    </div>
-  );
-};
+const TourCard: React.FC<TourCardProps> = ({ imageSrc, title, description, link }) => (
+  <div className="bg-white p-4 rounded shadow hover:shadow-lg transition-shadow duration-300">
+    <img src={imageSrc} alt={title} className="w-full h-48 object-cover rounded" />
+    <h3 className="text-xl font-semibold mt-2">{title}</h3>
+    <p>{description}</p>
+    <Link href={link}>
+      <button className="mt-4 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition duration-300">Learn More</button>
+    </Link>
+  </div>
+);
 
-// Define prop types for Testimonial component
 interface TestimonialProps {
   text: string;
   author: string;
 }
 
-// Testimonial Component
-const Testimonial: React.FC<TestimonialProps> = ({ text, author }) => {
+const Testimonial: React.FC<TestimonialProps> = ({ text, author }) => (
+  <div className="bg-white p-4 rounded shadow transition-shadow duration-300 hover:shadow-lg">
+    <p className="italic">"{text}"</p>
+    <h4 className="font-semibold mt-2">- {author}</h4>
+  </div>
+);
+
+const Home = () => {
+  useEffect(() => {
+    // Initialize animations or libraries here
+  }, []);
+
   return (
-    <div className="bg-white p-4 rounded shadow transition-shadow duration-300 hover:shadow-lg">
-      <p>{text}</p>
-      <h4 className="font-semibold mt-2">{author}</h4>
-    </div>
+    <Layout>
+      <Head>
+        <title>Odisha Paradise Tours and Travels</title>
+        <meta name="description" content="Explore the beauty of Odisha, India, and the world with our exclusive tours and travel services." />
+      </Head>
+
+      {/* Hero Section */}
+      <section className="relative w-full h-[800px]">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('../images/hero-image.jpg')" }}
+        >
+          <div className="flex items-center justify-center w-full h-full bg-black bg-opacity-50">
+            <h1 className="text-white text-4xl md:text-6xl font-bold animate-bounce text-center">Welcome to Odisha Paradise!<br />Your Gateway to Global Destinations</h1>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Tours Section */}
+      <section className="py-10 bg-gray-100">
+        <div className="container mx-auto text-center">
+          <motion.h2
+            className="text-4xl font-semibold mb-6 text-[#316b9e]"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            Featured Tours
+          </motion.h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <TourCard
+              imageSrc="../images/tour1.jpg"
+              title="Odisha Wonders"
+              description="Explore the heritage, beaches, and culture of Odisha."
+              link="/tours/odisha"
+            />
+            <TourCard
+              imageSrc="../images/tour2.jpg"
+              title="National Highlights"
+              description="Discover India's diverse landscapes and iconic destinations."
+              link="/tours/india"
+            />
+            <TourCard
+              imageSrc="../images/tour3.jpg"
+              title="International Adventures"
+              description="Experience the best of global travel with our curated packages."
+              link="/tours/international"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* About Us Section */}
+      <section className="py-10 bg-white">
+        <div className="container mx-auto">
+          <div className="flex flex-col md:flex-row items-center">
+            <div className="md:w-1/2">
+              <h2 className="text-3xl font-semibold mb-4">About Us</h2>
+              <p className="mb-4">
+                At Odisha Paradise Tours and Travels, we specialize in offering bespoke travel experiences. From the ancient temples of Odisha to exotic international destinations, we are your trusted partner in creating unforgettable journeys.
+              </p>
+              <p className="mb-4">
+              <p className="mb-4">
+                At Odisha Paradise Tours and Travels, we specialize in offering bespoke travel experiences. From the ancient temples of Odisha to exotic international destinations, we are your trusted partner in creating unforgettable journeys.
+              </p>
+              </p>
+              <Link href="/about">
+                <button className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition duration-300">Learn More</button>
+              </Link>
+            </div>
+            <div className="md:w-1/2">
+              <img src="../images/about-us.jpg" alt="About Us" className="rounded shadow-lg" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-10 bg-gray-100">
+        <div className="container mx-auto text-center">
+          <motion.h2
+            className="text-4xl font-semibold mb-6 text-[#316b9e]"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            What Our Customers Say
+          </motion.h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <Testimonial text="An incredible tour of Odisha! Highly professional service." author="Amit S." />
+            <Testimonial text="Our international trip was seamless and amazing." author="Neha P." />
+            <Testimonial text="A well-organized and enjoyable national tour experience." author="Rahul M." />
+          </div>
+        </div>
+      </section>
+
+      {/* Call-to-Action Section */}
+      <section className="py-10 bg-orange-400 text-white text-center">
+        <div className="container mx-auto">
+          <h2 className="text-3xl font-semibold mb-4">Ready to Explore the World?</h2>
+          <p className="mb-6">
+            Whether you're seeking adventure, culture, or relaxation, we have something for everyone. Book your tour today and embark on a journey of discovery!
+          </p>
+          <Link href="/contact">
+            <button className="bg-white text-blue-600 py-2 px-4 rounded hover:bg-gray-200 transition duration-300">
+              Contact Us
+            </button>
+          </Link>
+        </div>
+      </section>
+    </Layout>
   );
 };
 
